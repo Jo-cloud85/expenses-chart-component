@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Expenses chart component</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+  <main>
+    <div id="main-container">
+
+      <div class="top-container">
+        <div class="balance">
+          <label>My balance</label>
+          <p>$921.48</p>
+        </div>
+        <img id="logo" src="./images/logo.svg" alt="logo-img">
+      </div>
+
+      <div class="bottom-container">
+        <label id="title">Spending - Last 7 days</label>
+        <div id="bar-chart"></div>
+        <hr>
+        <label id="month-total-label">Total this month</label>
+        <div id="month-summary">
+          <p id="month-total">$478.33</p>
+          <div>
+            <p id="percentage-change">+2.4%</p>
+            <p id="percentage-text">from last month</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
+
+<!-- <div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="#">Jo Young</a>.
+</div> -->

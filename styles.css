@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+:root {
+    font-family: 'DM Sans', sans-serif;
+    --very-pale-orange: hsl(33, 100%, 98%);
+    --cream: hsl(27, 66%, 92%);
+    --medium-brown: hsl(28, 10%, 53%);
+    --dark-brown: hsl(25, 47%, 15%);
+    --cyan: hsl(186, 34%, 60%);
+    --light-cyan: hsl(186, 49%, 80%);
+    --soft-red: hsl(10, 79%, 65%);
+    --light-soft-red: hsl(10, 100%, 76%);
+}
+
+html {
+    --r540: calc((540 / var(--base) * 1rem));
+    --r510: calc((510 / var(--base) * 1rem));
+    --r460: calc((460 / var(--base) * 1rem));
+    --r350: calc((350 / var(--base) * 1rem));
+    --r178: calc((178 / var(--base) * 1rem));
+    --r125: calc((125 / var(--base) * 1rem));
+    --r66: calc((66 / var(--base) * 1rem));
+    --r62: calc((62 / var(--base) * 1rem));
+    --r50: calc((50 / var(--base) * 1rem));
+    --r42: calc((42 / var(--base) * 1rem));
+    --r30: calc((30 / var(--base) * 1rem));
+    --r25: calc((25 / var(--base) * 1rem));
+    --r20: calc((20 / var(--base) * 1rem));
+    --r18: calc((18 / var(--base) * 1rem));
+    --r15: calc((15 / var(--base) * 1rem));
+    --r12: calc((12 / var(--base) * 1rem));
+    --r10: calc((10 / var(--base) * 1rem));
+    --base: 16;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+/* ------------ Overall structure ------------*/
+body,
+main {
+    display: grid;
+    place-items: center;
+}
+
+body {
+    background-color: var(--cream);
+    width: 100vw;
+    height: 100vh;
+}
+
+.top-container,
+.bottom-container {
+    border-radius: var(--r20);
+    box-sizing: border-box;
+    width: var(--r540);
+}
+
+.top-container {
+    background-color: var(--soft-red);
+    color: var(--very-pale-orange);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--r25) 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.bottom-container {
+    background-color: var(--very-pale-orange);
+    color: var(--dark-brown);
+    padding: 2rem 2.5rem 2.5rem 2.5rem;
+}
+
+#logo {
+    height: 3rem;
+}
+
+/* ---------- Font excl bar chart fonts ---------*/
+.balance label,
+#month-total-label,
+#percentage-text,
+#percentage-change {
+    font-size: var(--r18);
+    line-height: 1.5rem;
+}
+
+.balance p,
+.bottom-container #title {
+    font-size: 2rem;
+    line-height: var(--r42);
+}
+
+.balance p {
+    margin-top: 0.5rem;
+}
+
+#month-total {
+    font-size: 3rem;
+    line-height: var(--r62);
+    margin-top: 0.25rem;
+}
+
+#month-total-label {
+    font-weight: 400;
+}
+
+#month-total-label,
+#percentage-text {
+    color: var(--medium-brown);
+}
+
+.balance p,
+.bottom-container #title, 
+#month-total,
+#percentage-change {
+    font-weight: 700;
+}
+
+#percentage-change {
+    color: var(--dark-brown);
+    text-align: right;
+}
+
+/* --------------- Bar chart ----------------*/
+#bar-chart {
+    background-color: transparent;
+    display: flex;
+    align-items: last baseline;
+    justify-content: center;
+    padding-top: var(--r18);  
+}
+
+.bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.spend-amt {
+    background-color: var(--dark-brown);
+    border-radius: 5px;
+    color: var(--very-pale-orange);
+    visibility: hidden;
+    font-size: var(--r18);
+    font-weight: 700;
+    line-height: 1.5rem;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.bar-box,
+.bar-box.today {
+    border-radius: 5px;
+    width: var(--r50);
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    margin-top: 0.5rem;
+}
+
+.bar-box {
+    background-color: var(--soft-red);
+}
+
+.bar-box:hover {
+    background-color: var(--light-soft-red);
+}
+
+.bar-box.today {
+    background-color: var(--cyan);
+}
+
+.bar-box.today:hover {
+    background-color: var(--light-cyan);
+}
+
+.day-label,
+.day-label.today {
+    color: var(--medium-brown);
+    font-size: var(--r15);
+    font-weight: 400;
+    line-height: var(--r20);
+    padding-top: 0.5rem;
+}
+
+/* ------------------ hr -------------------*/
+hr {
+    background-color: var(--cream);
+    border: none;
+    border-radius: 1px;
+    height: 2px;
+    margin: 2rem 0;
+}
+
+/* ------------- Month summary -------------*/
+#month-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+} */
+
+@media screen and (max-width: 480px) {
+    .top-container,
+    .bottom-container {
+        border-radius: var(--r10);
+        width: 90vw;
+    }
+
+    .top-container {
+        padding: var(--r20);
+        margin-bottom: 1rem;
+    }
+    
+    .bottom-container {
+        padding: 1.5rem var(--r20);
+    }
+
+    #logo {
+        height: 2.5rem;
+    }
+
+    /* ----------- Font excl bar chart fonts ----------*/
+    .balance label,
+    #month-total-label,
+    #percentage-text,
+    #percentage-change {
+        font-size: var(--r15);
+        line-height: var(--r20);
+    }
+
+    .balance p,
+    .bottom-container #title {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    #month-total {
+        font-size: var(--r30);
+        line-height: 2.5rem;
+    }
+
+    /* ----------------- Bar chart ----------------*/
+    #bar-chart {
+        padding-top: 4px;
+    }
+
+    .spend-amt {
+        border-radius: 3px;
+        font-size: var(--r12);
+        line-height: var(--r15);
+        padding: 4px;
+    }
+
+    .bar-box,
+    .bar-box.today {
+        border-radius: 3px;
+        width: 2rem;
+        margin-top: 6px;
+    }
+
+    .day-label,
+    .day-label.today {
+        font-size: var(--r12);
+        line-height: var(--r15);
+        padding-top: var(--r10);
+    }
+
+    /* ------------------ hr -------------------*/
+    hr {
+        margin: 1.5rem 0;
+    }
+}
