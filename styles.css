@@ -40,15 +40,11 @@ html {
 }
 
 /* ------------ Overall structure ------------*/
-body,
-main {
-    display: grid;
-    place-items: center;
-}
-
 body {
     background-color: var(--cream);
-    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
 }
 
